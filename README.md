@@ -18,9 +18,6 @@ deploy_production:
   only:
     - master
   script:
-    - mkdir "${HOME}/.ssh"
-    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
     - echo "${SSH_KEY_PRIVATE}" > "${HOME}/.ssh/id_rsa"
-    - chmod 600 "${HOME}/.ssh/id_rsa"
     - rsync -azv --exclude=".git" -e "ssh -i ${HOME}/.ssh/id_rsa" ./ username@host:~/
 ```
