@@ -10,7 +10,7 @@ RUN apt-get update && \
   cd ~ && \
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php && \
-  php -r "unlink('composer-setup.php');"
+  php -r "unlink('composer-setup.php');" && \
   # install npm
   curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
   apt-get install -y build-essential nodejs && \
