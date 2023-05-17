@@ -1,7 +1,7 @@
 FROM debian:stretch-slim
 
 RUN 
-  "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+  echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
   apt-get update && \ 
   apt-get -y install git ssh rsync curl php unzip zip wget && \
   apt-get clean && \
