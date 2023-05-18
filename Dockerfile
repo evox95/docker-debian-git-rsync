@@ -1,8 +1,6 @@
-FROM debian:stretch-slim
+FROM debian:bookworm-20230502-slim
 
-RUN \
-  echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
-  apt-get update && \ 
+RUN apt-get update && \ 
   apt-get -y install git ssh rsync curl php unzip zip wget && \
   apt-get clean && \
   mkdir ~/.ssh && \
