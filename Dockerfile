@@ -3,7 +3,7 @@ FROM debian:bookworm-20230502-slim
 RUN apt-get update && \ 
   apt-get -y install git ssh rsync curl php unzip zip wget && \
   apt-get clean && \
-  mkdir -f ~/.ssh && \
+  mkdir -p ~/.ssh && \
   echo "StrictHostKeyChecking no" >> ~/.ssh/config && \
   chmod -R 600 ~/.ssh && \
   # install composer
